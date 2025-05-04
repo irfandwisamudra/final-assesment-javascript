@@ -9,7 +9,37 @@
  *   ```
  */
 
-class Item {}
+class Item {
+  constructor(id, name, quantity, price) {
+    if (typeof id !== "number") throw new TypeError("id must be a number");
+    if (typeof name !== "string") throw new TypeError("name must be a string");
+    if (typeof quantity !== "number")
+      throw new TypeError("quantity must be a number");
+    if (typeof price !== "number")
+      throw new TypeError("price must be a number");
+
+    this.id = id;
+    this.name = name;
+    this.quantity = quantity;
+    this.price = price;
+  }
+
+  updateDetails(name, quantity, price) {
+    if (typeof name !== "string") throw new TypeError("name must be a string");
+    if (typeof quantity !== "number")
+      throw new TypeError("quantity must be a number");
+    if (typeof price !== "number")
+      throw new TypeError("price must be a number");
+
+    this.name = name;
+    this.quantity = quantity;
+    this.price = price;
+  }
+
+  displayDetails() {
+    return `ID: ${this.id}, Name: ${this.name}, Quantity: ${this.quantity}, Price: ${this.price}`;
+  }
+}
 
 // Jangan hapus kode di bawah ini!
 export default Item;
